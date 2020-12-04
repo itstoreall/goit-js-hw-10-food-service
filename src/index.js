@@ -1,3 +1,4 @@
+import "./js/templating"
 import './styles.css';
 
 const Theme = {
@@ -21,13 +22,11 @@ function changeTheme(e) {
       ? (
          refs.body.classList.add(Theme.DARK),
          refs.body.classList.remove(Theme.LIGHT),
-         saveData(checked),
-         console.log(checked)
+         saveData(checked)
       ) : (
          refs.body.classList.add(Theme.LIGHT),
          refs.body.classList.remove(Theme.DARK),
-         saveData(checked),
-         console.log(checked)
+         saveData(checked)
       );
 };
 
@@ -44,5 +43,3 @@ function saveData(checked) {
       ? localStorage.setItem("theme", "dark-theme")
       : localStorage.setItem("theme", "light-theme")
 };
-
-// console.log(localStorage.getItem("theme"));
